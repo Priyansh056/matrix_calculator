@@ -1,0 +1,161 @@
+/* General Setup */
+:root {
+    --bg-gradient-start: #111827;
+    --bg-gradient-mid: #1f2937;
+    --bg-body: #1f2937;
+    --bg-display: #111827;
+    --bg-btn-default: #374151;
+    --bg-btn-default-hover: #4b5563;
+    --bg-btn-function: #4b5563;
+    --bg-btn-function-hover: #6b7280;
+    --bg-btn-operator: #f97316;
+    --bg-btn-operator-hover: #fb923c;
+    --bg-btn-equal: #16a34a;
+    --bg-btn-equal-hover: #22c55e;
+    --bg-btn-clear: #dc2626;
+    --bg-btn-clear-hover: #ef4444;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-start));
+    padding: 1rem;
+}
+
+/* Calculator Container */
+.calculator {
+    background-color: var(--bg-body);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 450px; /* Increased max-width for scientific layout */
+}
+
+/* Display Screen */
+.display-container {
+    margin-bottom: 1.5rem;
+}
+
+.display {
+    background-color: var(--bg-display);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: right;
+    overflow: hidden;
+}
+
+#equation-display {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    height: 1.5rem;
+}
+
+#main-display {
+    color: var(--text-primary);
+    font-size: 2.25rem;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.mode-toggle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#rad-deg-toggle {
+    font-size: 0.75rem;
+    background-color: var(--bg-btn-default);
+    color: var(--text-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+}
+#rad-deg-toggle:hover {
+    background-color: var(--bg-btn-default-hover);
+}
+
+/* Buttons Grid */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+/* Button Styling */
+.btn {
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.1s ease;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.default {
+    background-color: var(--bg-btn-default);
+    color: var(--text-primary);
+}
+.btn.default:hover {
+    background-color: var(--bg-btn-default-hover);
+}
+
+.btn.function {
+    background-color: var(--bg-btn-function);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+.btn.function:hover {
+    background-color: var(--bg-btn-function-hover);
+}
+
+.btn.operator {
+    background-color: var(--bg-btn-operator);
+    color: var(--text-primary);
+}
+.btn.operator:hover {
+    background-color: var(--bg-btn-operator-hover);
+}
+
+.btn.equal {
+    background-color: var(--bg-btn-equal);
+    color: var(--text-primary);
+}
+.btn.equal:hover {
+    background-color: var(--bg-btn-equal-hover);
+}
+
+.btn.clear {
+    background-color: var(--bg-btn-clear);
+    color: var(--text-primary);
+}
+.btn.clear:hover {
+    background-color: var(--bg-btn-clear-hover);
+}
+
+/* Span 2 columns */
+.col-span-2 {
+    grid-column: span 2;
+}
